@@ -7,7 +7,7 @@ data <- rbind(data[data$Date=='1/2/2007',],data[data$Date=='2/2/2007',])
 Sys.setlocale(locale = "C")
 # Open PNG graphic device
 png(filename='plot2.png',width=480,height=480)
-# Plot the figure
+# Convert Date and Time variables to Date/Time classes
 datetime <- strptime(paste(data$Date, data$Time), format='%d/%m/%Y %H:%M:%S')
 # Plot the figure
 with(data,plot(datetime,Global_active_power,type="l",ylab='Global Active Power (kilowatts)',xlab=""))
